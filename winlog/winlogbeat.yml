@@ -1,0 +1,11 @@
+winlogbeat.event_logs:
+  - name: Application
+    ignore_older: 72h
+  - name: System
+output.redis:
+  enabled: true
+  hosts: ["redis:6379"]
+  port: 6379
+  key: logstash:Event_log
+  worker: 1
+
